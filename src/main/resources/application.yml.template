@@ -1,0 +1,88 @@
+
+####### L O C A L ######
+# spring-boot-starter-camunda-sdk: 8.5.x
+zeebe:
+  client:
+    cloud:
+        clientId: zeebe
+        clientSecret: zecret
+        authUrl: http://localhost:18080/auth/realms/camunda-platform/protocol/openid-connect/token
+    broker:
+      grpcAddress: http://localhost:26500
+    security:
+      plaintext: true
+
+
+##### SELF_MANAGED_REMOTE (e.g. AWS) ######
+# spring-boot-starter-camunda-sdk: 8.5.x
+#zeebe:
+#  client:
+#    cloud:
+#        clientId: zeebe
+#        clientSecret: <yourZeebeSecret>
+#        authUrl: https://<yourDnsLabel>.<yourIp>.nip.io/auth/realms/camunda-platform/protocol/openid-connect/token
+#    broker:
+#      grpcAddress: https://<yourDnsLabel>.<yourIp>.nip.io:443
+#    security:
+#      plaintext: false
+
+
+      
+# spring-boot-starter-camunda-sdk:8.6.x
+# self-managed remote Camunda 8 environment
+# camunda:
+#   client:
+#     mode: self-managed
+#     tenant-ids:
+#       - <default>
+#     auth:
+#       client-id: zeebe
+#       client-secret: <yourZeebeSecret>
+#       issuer: https://<yourDnsLabel>.<yourIp>.nip.io:443/auth/realms/camunda-platform/protocol/openid-connect/token
+#     zeebe:
+#       enabled: true
+#       defaults:
+#         enabled: true
+#         stream-enabled: true
+#       grpc-address: https://<yourDnsLabel>.<yourIp>.nip.io:443
+#       rest-address: https://<yourDnsLabel>.<yourIp>.nip.io:443
+#       prefer-rest-over-grpc: false
+#       audience: zeebe-api
+
+# spring-boot-starter-camunda-sdk:8.6.x with authentication
+# local Camunda 8 environment
+# camunda:
+#   client:
+#     mode: self-managed
+#     tenant-ids:
+#       - <default>
+#     auth:
+#       client-id: zeebe
+#       client-secret: zecret
+#       issuer: http://localhost:18080/auth/realms/camunda-platform/protocol/openid-connect/token
+#     zeebe:
+#       enabled: true
+#       grpc-address: http://localhost:26500
+#       rest-address: http://localhost:8088
+#       prefer-rest-over-grpc: false
+#       audience: zeebe-api
+
+
+# spring-boot-starter-camunda-sdk:8.6.x without authentication
+#camunda:
+#  client:
+#    mode: self-managed
+#    zeebe:
+#      enabled: true
+#      grpc-address: http://127.0.0.1:26500
+#      rest-address: http://127.0.0.1:8088
+
+# SaaS 8.6.x
+# camunda:
+#  client:
+#    mode: saas
+#    auth:
+#      client-id: <your client id>
+#      client-secret: <your client secret>
+#    cluster-id: <your cluster id>
+#    region: <your cluster region>

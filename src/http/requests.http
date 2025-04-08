@@ -1,0 +1,47 @@
+POST http://localhost:8080/newApplication
+
+{
+  "application_id": "APP-20250408-0001",
+  "application_date": "2025-04-08",
+  "personal_details": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "date_of_birth": "1990-05-15",
+    "gender": "Male",
+    "nationality": "US",
+    "identification": {
+      "type": "Passport",
+      "number": "X12345678",
+      "issue_date": "2020-06-01",
+      "expiry_date": "2030-06-01"
+    }
+  },
+  "contact_details": {
+    "email": "john.doe@example.com",
+    "phone": "+1-555-123-4567",
+    "address": {
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10001",
+      "country": "USA"
+    }
+  },
+  "employment_details": {
+    "status": "Employed",
+    "employer_name": "Acme Corp",
+    "job_title": "Software Engineer",
+    "annual_income": 95000
+  },
+  "account_details": {
+    "account_type": "Savings",
+    "currency": "USD",
+    "initial_deposit": 500,
+    "debit_card_required": true,
+    "online_banking_required": true
+  },
+  "consent": {
+    "terms_and_conditions_accepted": true,
+    "marketing_consent": false
+  }
+}
