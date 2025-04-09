@@ -30,7 +30,6 @@ public class OnboardingRestController {
         log.info("Received application: " + ard.personal_details().first_name() + " "
                 + ard.personal_details().last_name());
         // save the application to the database ==> return the application ID
-        String applicationId = "1234567890"; // TODO: save to DB and return the ID
 
         Application application = new Application();
         application.setFirstName(ard.personal_details().first_name());
@@ -44,7 +43,9 @@ public class OnboardingRestController {
         application.setPostalCode(ard.contact_details().address().postal_code());
         application.setCountry(ard.contact_details().address().country());
         application.setEmail(ard.contact_details().email());
-        application.setPhone(ard.contact_details().phone());   
+        application.setPhone(ard.contact_details().phone());  
+        application.setAnnualIncome(ard.employment_details().annual_income());
+        application.setEmploymentStatus(ard.employment_details().status()); 
 
         Long id = applicationRepository.save(application).getId();
 

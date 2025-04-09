@@ -1,3 +1,4 @@
+
 package com.camunda.demo.model;
 
 import java.util.Date;
@@ -9,11 +10,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import lombok.Data;
 
 @Entity
 @Data
-public class Application {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,13 +32,7 @@ public class Application {
 
     @Column(name = "created_at")
     @ColumnDefault("now()")
-    private Date applicationDate;
-
-    @Column(name = "account_type")
-    private String accountType;
-
-    @Column(name = "currency")
-    private String currency;
+    private Date createdDate;
 
     @Column(name = "street")
     private String street;
@@ -56,10 +52,9 @@ public class Application {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "annual_income")
-    private Integer annualIncome;
-
-    @Column(name = "employment_status")
-    private String employmentStatus;
-
+    @PrePersist
+    void preInsert() {
+        if (this.createdDate == null)
+            this.createdDate = new Date();
+    }
 }
