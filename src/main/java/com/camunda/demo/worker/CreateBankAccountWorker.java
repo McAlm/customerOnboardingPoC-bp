@@ -46,7 +46,7 @@ public class CreateBankAccountWorker {
             for (BankAccount bankAccount : bankAccounts) {
                 if (bankAccount.getAccountType().equals("Checking")) {
                     // throw an BPMNError
-–
+
                     throw new ZeebeBpmnError("CHECKING_ACCOUNT_EXISTS", "Customer already has a checking account",
                             null);
                 }
