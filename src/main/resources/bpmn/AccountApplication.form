@@ -1,0 +1,504 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "e6de519"
+  },
+  "schemaVersion": 18,
+  "id": "application-received-0fjjdbs",
+  "components": [
+    {
+      "text": "### Application Details",
+      "type": "text",
+      "id": "Heading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Personal Details Section",
+      "type": "text",
+      "id": "Subheading_1",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "id": "Textfield_2",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "personal_details.first_name",
+      "description": "Enter your first name",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "id": "Textfield_3",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "lastName",
+      "description": "Enter your last name",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Date_4",
+      "dateLabel": "Date of Birth",
+      "validate": {
+        "required": true
+      },
+      "key": "dateOfBirth",
+      "description": "Select your date of birth",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      }
+    },
+    {
+      "label": "Gender",
+      "values": [
+        {
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "value": "female",
+          "label": "Female"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ],
+      "type": "select",
+      "id": "Select_5",
+      "validate": {
+        "required": true
+      },
+      "key": "gender",
+      "description": "Select your gender",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "label": "Nationality",
+      "type": "textfield",
+      "id": "Textfield_6",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "nationality",
+      "description": "Enter your nationality",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Identification Details Section",
+      "type": "text",
+      "id": "Subheading_7",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      }
+    },
+    {
+      "label": "Identification Type",
+      "values": [
+        {
+          "value": "passport",
+          "label": "Passport"
+        },
+        {
+          "value": "driver's license",
+          "label": "Driver's License"
+        },
+        {
+          "value": "ID card",
+          "label": "ID Card"
+        }
+      ],
+      "type": "select",
+      "id": "Select_8",
+      "validate": {
+        "required": true
+      },
+      "key": "identificationType",
+      "description": "Select your identification type",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "label": "Identification Number",
+      "type": "textfield",
+      "id": "Textfield_9",
+      "validate": {
+        "minLength": 6,
+        "maxLength": 20,
+        "required": true
+      },
+      "key": "identificationNumber",
+      "description": "Enter your identification number",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Date_10",
+      "dateLabel": "Issue Date",
+      "validate": {
+        "required": true
+      },
+      "key": "issueDate",
+      "description": "Select the issue date",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "subtype": "date",
+      "type": "datetime",
+      "id": "Date_11",
+      "dateLabel": "Expiry Date",
+      "validate": {
+        "required": true
+      },
+      "key": "expiryDate",
+      "description": "Select the expiry date",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Contact Details Section",
+      "type": "text",
+      "id": "Subheading_12",
+      "layout": {
+        "row": "row_6",
+        "columns": null
+      }
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "id": "Textfield_13",
+      "validate": {
+        "minLength": 5,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "email",
+      "description": "Enter your email address",
+      "layout": {
+        "row": "row_7",
+        "columns": null
+      }
+    },
+    {
+      "label": "Phone",
+      "type": "textfield",
+      "id": "Textfield_14",
+      "validate": {
+        "minLength": 8,
+        "maxLength": 15,
+        "required": true
+      },
+      "key": "phone",
+      "description": "Enter your phone number",
+      "layout": {
+        "row": "row_7",
+        "columns": null
+      }
+    },
+    {
+      "label": "Address",
+      "type": "textarea",
+      "id": "Textarea_15",
+      "validate": {
+        "minLength": 10,
+        "maxLength": 100,
+        "required": true
+      },
+      "key": "address",
+      "description": "Enter your address",
+      "layout": {
+        "row": "row_8",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Employment Details Section",
+      "type": "text",
+      "id": "Subheading_16",
+      "layout": {
+        "row": "row_9",
+        "columns": null
+      }
+    },
+    {
+      "label": "Employment Status",
+      "values": [
+        {
+          "value": "employed",
+          "label": "Employed"
+        },
+        {
+          "value": "self-employed",
+          "label": "Self-employed"
+        },
+        {
+          "value": "unemployed",
+          "label": "Unemployed"
+        }
+      ],
+      "type": "select",
+      "id": "Select_17",
+      "validate": {
+        "required": true
+      },
+      "key": "employmentStatus",
+      "description": "Select your employment status",
+      "layout": {
+        "row": "row_10",
+        "columns": null
+      }
+    },
+    {
+      "label": "Employer Name",
+      "type": "textfield",
+      "id": "Textfield_18",
+      "validate": {
+        "minLength": 5,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "employerName",
+      "description": "Enter your employer's name",
+      "layout": {
+        "row": "row_10",
+        "columns": null
+      }
+    },
+    {
+      "label": "Job Title",
+      "type": "textfield",
+      "id": "Textfield_19",
+      "validate": {
+        "minLength": 5,
+        "maxLength": 50,
+        "required": true
+      },
+      "key": "jobTitle",
+      "description": "Enter your job title",
+      "layout": {
+        "row": "row_10",
+        "columns": null
+      }
+    },
+    {
+      "label": "Annual Income",
+      "type": "number",
+      "id": "Number_20",
+      "decimalDigits": 2,
+      "defaultValue": 0,
+      "validate": {
+        "min": 20000,
+        "max": 1000000,
+        "step": 1000,
+        "required": true
+      },
+      "key": "annualIncome",
+      "description": "Enter your annual income",
+      "layout": {
+        "row": "row_11",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Account Details Section",
+      "type": "text",
+      "id": "Subheading_21",
+      "layout": {
+        "row": "row_12",
+        "columns": null
+      }
+    },
+    {
+      "label": "Account Type",
+      "values": [
+        {
+          "value": "savings",
+          "label": "Savings"
+        },
+        {
+          "value": "checking",
+          "label": "Checking"
+        },
+        {
+          "value": "investment",
+          "label": "Investment"
+        }
+      ],
+      "type": "select",
+      "id": "Select_22",
+      "validate": {
+        "required": true
+      },
+      "key": "accountType",
+      "description": "Select your account type",
+      "layout": {
+        "row": "row_13",
+        "columns": null
+      }
+    },
+    {
+      "label": "Currency",
+      "values": [
+        {
+          "value": "USD",
+          "label": "USD"
+        },
+        {
+          "value": "EUR",
+          "label": "EUR"
+        },
+        {
+          "value": "GBP",
+          "label": "GBP"
+        }
+      ],
+      "type": "select",
+      "id": "Select_23",
+      "validate": {
+        "required": true
+      },
+      "key": "currency",
+      "description": "Select your currency",
+      "layout": {
+        "row": "row_13",
+        "columns": null
+      }
+    },
+    {
+      "label": "Initial Deposit",
+      "type": "number",
+      "id": "Number_24",
+      "decimalDigits": 2,
+      "defaultValue": 0,
+      "validate": {
+        "min": 1000,
+        "max": 100000,
+        "step": 100,
+        "required": true
+      },
+      "key": "initialDeposit",
+      "description": "Enter your initial deposit",
+      "layout": {
+        "row": "row_13",
+        "columns": null
+      }
+    },
+    {
+      "label": "Debit Card Required",
+      "type": "checkbox",
+      "id": "Checkbox_25",
+      "defaultValue": false,
+      "validate": {
+        "required": true
+      },
+      "key": "debitCardRequired",
+      "description": "Select if a debit card is required",
+      "layout": {
+        "row": "row_14",
+        "columns": null
+      }
+    },
+    {
+      "label": "Online Banking Required",
+      "type": "checkbox",
+      "id": "Checkbox_26",
+      "defaultValue": false,
+      "validate": {
+        "required": true
+      },
+      "key": "onlineBankingRequired",
+      "description": "Select if online banking is required",
+      "layout": {
+        "row": "row_14",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Consent Section",
+      "type": "text",
+      "id": "Subheading_27",
+      "layout": {
+        "row": "row_15",
+        "columns": null
+      }
+    },
+    {
+      "label": "Terms and Conditions Accepted",
+      "type": "checkbox",
+      "id": "Checkbox_28",
+      "defaultValue": false,
+      "validate": {
+        "required": true
+      },
+      "key": "termsConditionsAccepted",
+      "description": "Accept the terms and conditions",
+      "layout": {
+        "row": "row_16",
+        "columns": null
+      }
+    },
+    {
+      "label": "Marketing Consent",
+      "type": "checkbox",
+      "id": "Checkbox_29",
+      "defaultValue": false,
+      "validate": {
+        "required": true
+      },
+      "key": "marketingConsent",
+      "description": "Consent to receive marketing communications",
+      "layout": {
+        "row": "row_16",
+        "columns": null
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}

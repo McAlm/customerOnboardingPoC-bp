@@ -1,0 +1,24 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.7.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "c60c336"
+  },
+  "schemaVersion": 18,
+  "id": "check-with-compliance-team-1mzj1sh",
+  "components": [
+    {
+      "label": "Approve?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1hw2gv8",
+        "columns": null
+      },
+      "id": "Field_0r82uyy",
+      "key": "approvedByComplianceTeam"
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}

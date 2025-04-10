@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="EvaluateRiskDRD" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="c60c336" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.7.0">
+  <inputData id="InputData_1u9iutb" name="Annual Income" />
+  <inputData id="InputData_1swoy3t" name="EmploymentStatus" />
+  <decision id="evaluate-risk" name="Evaluate Risk">
+    <informationRequirement id="InformationRequirement_1ezco2q">
+      <requiredInput href="#InputData_1u9iutb" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_05uu6k7">
+      <requiredInput href="#InputData_1swoy3t" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0g1heiv">
+      <input id="InputClause_1y19njv" label="Annual Income">
+        <inputExpression id="LiteralExpression_0p4izhw" typeRef="number">
+          <text>annualIncome</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_17dxl0q" label="Employment Status">
+        <inputExpression id="LiteralExpression_0ciihoe" typeRef="string">
+          <text>employmentStatus</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1quoms4">
+          <text>"Employed","Unemployed","Self-Employed"</text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_152nhon" label="Risk Level" name="riskLevel" typeRef="string">
+        <outputValues id="UnaryTests_1e7q4oy">
+          <text>"High","Medium","Low"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_193izfx">
+        <inputEntry id="UnaryTests_023mrp9">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hgwi7b">
+          <text>"Unemployed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18nf377">
+          <text>"High"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p40kp6">
+        <inputEntry id="UnaryTests_1ntg7u7">
+          <text>&lt; 50000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12jkd0z">
+          <text>"Self-Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15cdcda">
+          <text>"High"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07vdv15">
+        <inputEntry id="UnaryTests_1opcv6v">
+          <text>[50000..100000]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0abscdb">
+          <text>"Self-Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qkhvcl">
+          <text>"Medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0e0299w">
+        <inputEntry id="UnaryTests_1aksdf1">
+          <text>&gt;100000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gr6e0r">
+          <text>"Self-Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qxknll">
+          <text>"Low"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w5wtp2">
+        <inputEntry id="UnaryTests_1aqj8dh">
+          <text>&lt; 20000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yv8hpt">
+          <text>"Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gc2eeu">
+          <text>"High"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c55ny5">
+        <inputEntry id="UnaryTests_0g6glni">
+          <text>[20000..50000]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o4arrw">
+          <text>"Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eglydl">
+          <text>"Medium"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y31mnm">
+        <inputEntry id="UnaryTests_0vd217x">
+          <text>&gt; 50000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nnabjh">
+          <text>"Employed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06ldxgh">
+          <text>"Low"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape id="DMNShape_0mqd5ke" dmnElementRef="InputData_1u9iutb">
+        <dc:Bounds height="45" width="125" x="157" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_06i065u" dmnElementRef="InformationRequirement_1ezco2q">
+        <di:waypoint x="220" y="337" />
+        <di:waypoint x="360" y="200" />
+        <di:waypoint x="360" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1b8pg0t" dmnElementRef="InputData_1swoy3t">
+        <dc:Bounds height="45" width="125" x="497" y="337" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_15yloiw" dmnElementRef="InformationRequirement_05uu6k7">
+        <di:waypoint x="560" y="337" />
+        <di:waypoint x="420" y="200" />
+        <di:waypoint x="420" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0grqchp" dmnElementRef="evaluate-risk">
+        <dc:Bounds height="80" width="180" x="300" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -11,7 +11,7 @@ import lombok.extern.java.Log;
 
 @SpringBootApplication
 @Log
-//@Deployment(resources = { "classpath:bpmn/doNothing.bpmn" })
+@Deployment(resources = { "classpath:bpmn/*.*" })
 public class BlankDemoApplication implements CommandLineRunner {
 
 	@Autowired
