@@ -45,3 +45,6 @@ POST http://localhost:8080/newApplication
     "marketing_consent": false
   }
 }
+
+###
+DELETE http://localhost:8080/application/cancel?applicationId=9
